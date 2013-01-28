@@ -64,6 +64,10 @@ body {
 
 #header {
 	background-color: #1199aa; /* #17b6c3 */
+	position: fixed; 
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 #navigation {
@@ -90,7 +94,7 @@ h2 {
 }
 
 #body {
-	margin: 30px;
+	margin: 90px 30px 30px 30px; /* 90px for extra padding at top to compensate for fixed header */
 }
 
 .section {
