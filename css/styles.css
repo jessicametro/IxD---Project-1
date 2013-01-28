@@ -70,6 +70,13 @@ body {
 	width: 100%;
 }
 
+html.touch #header {
+	-webkit-transition-property: margin-top;
+ 	-webkit-transition-duration: 0.25s;
+	transition-property: margin-top;
+ 	transition-duration: 0.25s;
+ }
+
 #navigation {
 	height: 60px;
 	-moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.18);
