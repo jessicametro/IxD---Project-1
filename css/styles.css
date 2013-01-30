@@ -161,6 +161,7 @@ p.text, li {
 	font-size: 0.75em;
 	line-height: 1.5em;
 	padding-bottom: 1.5em;
+	color: #222222;
 }
 
 /*
@@ -183,7 +184,9 @@ ul li:before {
 }
 
 .underline {
-	text-decoration: underline;
+	/* text-decoration: underline; */
+	border-bottom: 1px solid #666666;
+	/*padding-bottom: */
 }
 
 #footer {
