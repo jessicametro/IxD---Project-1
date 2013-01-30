@@ -146,11 +146,17 @@ h4 {
 }
 
 h5 {
-	font-style: italic;
-	margin-bottom: -0.75em;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 900;
+	font-size: 2.25em;
+	line-height: 0.5em;
+	padding-bottom: 1em;
+	color: #dddddd;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	text-transform:uppercase;
 }
 
-p.text, h5, li {
+p.text, li {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.75em;
 	line-height: 1.5em;
@@ -176,6 +182,9 @@ ul li:before {
 	content: "\00BB \0020";
 }
 
+.underline {
+	text-decoration: underline;
+}
 
 #footer {
 	background-color: #444444;
