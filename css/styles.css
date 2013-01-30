@@ -157,6 +157,26 @@ p.text, h5, li {
 	padding-bottom: 1.5em;
 }
 
+/*
+ul {
+	padding: 0 0 0 24px;
+	list-style: outside;
+	list-style-image: circle; url("../images/bullet.png")
+}
+*/
+
+ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1.5em;
+	text-indent: -.65em;
+}
+
+ul li:before {
+	content: "\00BB \0020";
+}
+
+
 #footer {
 	background-color: #444444;
 	/* min-height: 120px; */
