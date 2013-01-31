@@ -192,6 +192,7 @@ ul li:before {
 	margin: 0 15px 15px 0;	
 	position: relative;
 	cursor: pointer;
+	float: left;
 }
 
 .background {
@@ -230,7 +231,9 @@ ul li:before {
 	padding-top: 7px;
 }
 
-
+.clear {
+	clear: both;
+}
 
 .underline {
 	/* text-decoration: underline; */
