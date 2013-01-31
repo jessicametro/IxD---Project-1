@@ -39,6 +39,37 @@ $(window).ready(function() {
 
     });
     
+   
+    $("#navQuote").click(function(e) {
+    	$(window).scrollTo("#quote", 400);
+    	return false;
+    });
+
+    $("#navExplanation").click(function(e) {
+    	$(window).scrollTo("#explanation", 400);
+    	return false;
+    });
+    
+    $("#navButtons").click(function(e) {
+    	$(window).scrollTo("#buttons", 400);
+    	return false;
+    });
+    
+    $("#navCode").click(function(e) {
+    	$(window).scrollTo("#code", 400);
+    	return false;
+    });
+
+    $("#navExamples").click(function(e) {
+    	$(window).scrollTo("#examples", 400);
+    	return false;
+    });
+
+    
+    
+    
+    
+    
     $('.icon').bind('touchstart touchend', function(e) {
         e.preventDefault();
         $(this).toggleClass('hover_effect');
