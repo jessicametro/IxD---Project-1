@@ -210,6 +210,15 @@ ul li:before {
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	z-index: -1;
+	-webkit-transition-property: opacity;
+ 	-webkit-transition-duration: 1s;
+	transition-property: opacity;
+ 	transition-duration: .5s;
+ 	opacity: 0;
+}
+
+.icon:hover .backgroundWrapper {
+	opacity: 1;
 }
 
 .icon img {
