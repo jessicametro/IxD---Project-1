@@ -241,6 +241,21 @@ ul li:before {
 	/*padding-bottom: */
 }
 
+pre {
+	background-color: #444444;
+	padding: 15px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	font-family: 'Nixie One', cursive;
+	font-size: 0.75em;
+	line-height: 1.5em;
+	color: #eeeeee;
+	margin-bottom: 1.5em;
+	overflow: scroll;
+}
+
+
+
 #footer {
 	background-color: #444444;
 	/* min-height: 120px; */

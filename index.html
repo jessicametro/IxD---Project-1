@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/styles.css" type="text/css"/>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
 		<!-- modernizr is an exception to the "js goes at the bottom" rule because it needs to be loaded before the rest of the page -->
 		<script src="js/modernizr.custom.79293.js"></script>
 	</head>
@@ -136,8 +137,120 @@
 					<h5>Process</h5>
 					
 					<p class="text">
-						&#123; Code? &#125;
+						In order to achieve the disappearing / reappearing header, I used the following CSS:		
 					</p>
+					
+					<pre class="textCode">
+#header {
+	background-color: #1199aa; /* #17b6c3 */
+	position: fixed; 
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+html.touch #header {
+	-webkit-transition-property: margin-top;
+ 	-webkit-transition-duration: 0.25s;
+	transition-property: margin-top;
+ 	transition-duration: 0.25s;
+ }
+
+#navigation {
+	height: 60px;
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.18);
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.18);
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.18);
+}
+					</pre>
+					
+					<p class="text">
+						...as well as the following JavaScript:		
+					</p>
+					
+					<pre class="textCode">
+$(window).ready(function() { 
+	var header = $("#header");
+	var lastTop = 0;  // the last px at the top of the browser
+	var headerTop = 0;  // the top of the header (depends on how much is visible)
+	var headerBottom = headerTop + 60;  // the bottom of the header
+	$(window).scroll(function() {
+		var top = $(window).scrollTop();  // tells you where the page is
+		if (top < 0) {
+			top = 0; // compensates for bouncing
+		}
+		if (top < headerTop) {
+			headerTop = top; 
+			headerBottom = headerTop + 60;
+		} else if (top > headerBottom) {
+			headerBottom = top - 1;  // so it's just 1px above the top of the browser
+			headerTop = headerBottom - 60;  // so it is hidden
+		} 
+		var marginTop = headerTop - top;
+		header.css('margin-top', marginTop + 'px'); // format turns it into a CSS variable
+		lastTop = top;  // set the last top to be the current top
+	});	
+});
+					</pre>
+					
+					<p class="text">
+						In order to achieve the fade effect on the icon/button hybrids, I used the following CSS:	
+					</p>
+					
+					<pre class="textCode">				
+.icon {
+	height: 45px;
+	width: 45px;
+	margin: 0 15px 15px 0;	
+	position: relative;
+	cursor: pointer;
+	float: left;
+}
+
+.background {
+	height: 43px;
+	width: 43px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#d2d2d2));
+}
+
+.backgroundWrapper {
+	position: absolute;
+	left:0;
+	top:0;
+	height: 43px;  /* 1px padding makes it 45px */
+	width: 43px;   /* 1px padding makes it 45px */
+	padding: 1px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#d5d5d5), to(#c2c2c2));
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	z-index: -1;
+	-webkit-transition-property: opacity;
+ 	-webkit-transition-duration: 1s;
+	transition-property: opacity;
+ 	transition-duration: .5s;
+ 	opacity: 0;
+}
+
+.icon:hover .backgroundWrapper, .icon.hover_effect .backgroundWrapper {
+	opacity: 1;
+}
+
+.icon img {
+	display: block;
+	margin: 0 auto 0 auto;
+	padding-top: 7px;
+}
+					</pre>
+					
+					<p class="text">
+						...as well as the following JavaScript:		
+					</p>
+					
+					
+					
+					
 				</div>
 				
 				<div id="examples" class="section">	
