@@ -38,6 +38,7 @@
 
 					<p id="interpretation" class="text">
 						To me, the above quote can be interpreted in two ways&#58;
+					</p>
 						<ul>
 							<li>
 								Good design is both present and absent at the same time. Some of the best designs are never noticed because they were intended to not be noticed, but instead contribute to the overall experience.
@@ -46,7 +47,6 @@
 								Good user interaction design is comprised of elements that are more subdued when the user doesn&#8217;t need them, but when the user does, they become apparent.
 							</li>
 						</ul>	
-					</p>
 					<p id="proposal" class="text">
 						Prompted by the quote and my interpretation, I have chosen to create a responsive website, with a system of interactive elements that are present when the user needs them, and are subdued or altogether disappeared when the user does not need them. To me, this is very important due to the vast amounts of information and varying screen sizes that exist today.
 					</p>
@@ -176,13 +176,13 @@ $(window).ready(function() {
 	var headerBottom = headerTop + 60;  // the bottom of the header
 	$(window).scroll(function() {
 		var top = $(window).scrollTop();  // tells you where the page is
-		if (top < 0) {
+		if (top &#60; 0) {
 			top = 0; // compensates for bouncing
 		}
-		if (top < headerTop) {
+		if (top &#60; headerTop) {
 			headerTop = top; 
 			headerBottom = headerTop + 60;
-		} else if (top > headerBottom) {
+		} else if (top &#62; headerBottom) {
 			headerBottom = top - 1;  // so it's just 1px above the top of the browser
 			headerTop = headerBottom - 60;  // so it is hidden
 		} 
