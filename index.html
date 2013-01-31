@@ -194,7 +194,21 @@ $(window).ready(function() {
 					</pre>
 					
 					<p class="text">
-						In order to achieve the fade effect on the icon/button hybrids, I used the following CSS:	
+						For the icon/button hybrids, I used multiple div elements for each icon:	
+					</p>
+					
+					<pre class="textCode">
+&#60;div class="icon favorite"&#62;
+	&#60;div class="backgroundWrapper"&#62;
+		&#60;div class="background"&#62;
+		&#60;/div&#62;
+	&#60;/div&#62;
+	&#60;img src="images/favorites.png" alt="star" height="30" width="30"/&#62;
+&#60;/div&#62;
+					</pre>
+					
+					<p class="text">
+						In order to achieve the fade effect, used the following CSS:	
 					</p>
 					
 					<pre class="textCode">				
@@ -245,11 +259,19 @@ $(window).ready(function() {
 					</pre>
 					
 					<p class="text">
-						...as well as the following JavaScript:		
+						And to make it work (kind of) with a touch-based device, I used the following JavaScript:	
 					</p>
 					
+					<pre class="textCode">	
+$('.icon').bind('touchstart touchend', function(e) {
+	e.preventDefault();
+	$(this).toggleClass('hover_effect');
+}); 	
+					</pre>
 					
-					
+					<p class="text">
+						For more info, check out my <a href="https://github.com/jessicametro/IxD---Project-1">GitHub repository</a>.
+					</p>
 					
 				</div>
 				
