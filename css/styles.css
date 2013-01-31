@@ -183,6 +183,43 @@ ul li:before {
 	content: "\00BB \0020";
 }
 
+.icon {
+	height: 45px;
+	width: 45px;
+	margin: 0 15px 15px 0;	
+	position: relative;
+	cursor: pointer;
+}
+
+.background {
+	height: 43px;
+	width: 43px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#d2d2d2));
+}
+
+.backgroundWrapper {
+	position: absolute;
+	left:0;
+	top:0;
+	height: 43px;  /* 1px padding makes it 45px */
+	width: 43px;   /* 1px padding makes it 45px */
+	padding: 1px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#d5d5d5), to(#c2c2c2));
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	z-index: -1;
+}
+
+.icon img {
+	display: block;
+	margin: 0 auto 0 auto;
+	padding-top: 7px;
+}
+
+
+
 .underline {
 	/* text-decoration: underline; */
 	border-bottom: 1px solid #666666;
