@@ -31,17 +31,18 @@ $(window).ready(function() {
     	var marginTop = headerTop - top;
     	header.css('margin-top', marginTop + 'px'); // format turns it into a CSS variable
     	
-    	
-    	
-    	
-    	
-    	
-    	
+
     	console.log(top - lastTop);  // tells you the direction
     	    // whenever number is positive you're scrolling down 
     		// whenever number is negative you're scrolling up
     	lastTop = top;  // set the last top to be the current top
 
     });
+    
+    $('.icon').bind('touchstart touchend', function(e) {
+        e.preventDefault();
+        $(this).toggleClass('hover_effect');
+    }); 
+    
 });
 

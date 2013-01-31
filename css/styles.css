@@ -217,7 +217,7 @@ ul li:before {
  	opacity: 0;
 }
 
-.icon:hover .backgroundWrapper {
+.icon:hover .backgroundWrapper, .icon.hover_effect .backgroundWrapper {
 	opacity: 1;
 }
 
